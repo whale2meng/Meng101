@@ -95,7 +95,7 @@ $("rpt").onclick=()=>{const fs=panels.map(p=>add(S.starts[p.id],2)),mn=fs.reduce
  <table><tr><th>Week</th><th>Plan m²</th><th>Actual m²</th><th>Cum. plan</th><th>Cum. actual</th><th>Progress</th></tr>${rows.map((r,i)=>`<tr><td>W${i+1} · ${lab(r.w)}–${lab(r.e)}</td><td>${r.pl.toLocaleString()}</td><td>${r.ac.toLocaleString()}</td><td>${r.cp.toLocaleString()}</td><td>${r.ca===null?"–":r.ca.toLocaleString()}</td><td>${r.ca===null?"–":(r.ca/TOTAL*100).toFixed(1)+"%"}</td></tr>`).join("")}</table>`;
  $("rep").showModal()};
 /* ONLINE SYNC (Firebase Realtime Database, REST). Paste your database URL between the quotes, or use the Online sync button. */
-let FB_URL="";
+let FB_URL="https://meng101-fc273-default-rtdb.asia-southeast1.firebasedatabase.app/";
 FB_URL=FB_URL||S.fb||"";
 const fbu=()=>FB_URL.replace(/\/+$/,"");
 const setS=t=>{$("fbs").textContent=t};
